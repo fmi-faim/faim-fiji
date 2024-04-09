@@ -43,9 +43,6 @@ tests:
 about:
   homepage: https://github.com/fmi-faim/faim-fiji
   license: GPL-3.0
-  license_file:
-    - LICENSE.txt
-    - LICENSES
   summary: 'Custom Fiji bundle for distribution via conda'
   description: |
     Fiji (Is Just ImageJ) deployed as a conda package,
