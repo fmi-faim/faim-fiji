@@ -39,9 +39,12 @@ requirements:
 tests:
   - package_contents:
       files:
-        - ImageJ-win64.exe
-        - ImageJ-linux64
-        - Contents/MacOS/ImageJ-macosx
+        - if: win
+          then: ImageJ-win64.exe
+        - if: linux
+          then: ImageJ-linux64
+        - if: osx
+          then: Contents/MacOS/ImageJ-macosx
         - jars/mobie-viewer-fiji-4.4.2.jar
 
 
