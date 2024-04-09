@@ -1,0 +1,60 @@
+# this sets up "context variables" (in this case name and version) that
+# can later be used in Jinja expressions
+context:
+  version: 2.14.0
+  name: run-fiji
+
+# top level package information (name and version)
+package:
+  name: ${{ name }}
+  version: ${{ version }}
+
+# location to get the source from
+source:
+  - url: https://downloads.imagej.net/fiji/archive/20240318-1717/fiji-nojre.zip
+    sha256: 3a8641d861785890db7a5bcd88b29c32c4f5a316ac6c05a8acbf706b6cad1a28
+    target_directory: fiji
+
+
+# build number (should be incremented if a new build is made, but version is not incrementing)
+build:
+  number: 0
+  noarch: generic
+
+
+# the requirements at build and runtime
+requirements:
+  host:
+    - openjdk
+  run:
+    - openjdk
+
+# tests to validate that the package works as expected
+tests:
+  - package_contents:
+      files:
+        - ImageJ-win64.exe
+        - ImageJ-linux64
+        - Contents/MacOS/ImageJ-macosx
+        - jars/mobie-viewer-fiji-4.4.2.jar
+
+
+# information about the package
+about:
+  homepage: https://github.com/fmi-faim/faim-fiji
+  license: GPL-3.0
+  license_file:
+    - LICENSE.txt
+    - LICENSES
+  summary: 'Custom Fiji bundle for distribution via conda'
+  description: |
+    Fiji (Is Just ImageJ) deployed as a conda package,
+    with some update sites activated that are commonly used
+    at the Friedrich Miescher Institute for Biomedical Research (FMI)
+  repository: https://github.com/fmi-faim/faim-fiji
+  documentation: https://github.com/fmi-faim/faim-fiji
+
+# the below is conda-forge specific!
+extra:
+  recipe-maintainers:
+    - imagejan
