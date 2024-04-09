@@ -19,7 +19,13 @@ source:
 # build number (should be incremented if a new build is made, but version is not incrementing)
 build:
   number: 0
-  noarch: generic
+  script:
+  - if: linux
+    then: build.sh
+  - if: osx
+    then: build-osx.sh
+  - if: win
+    then: build.bat
 
 
 # the requirements at build and runtime
