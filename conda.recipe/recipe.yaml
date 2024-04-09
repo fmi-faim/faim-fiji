@@ -25,9 +25,9 @@ build:
 # the requirements at build and runtime
 requirements:
   host:
-    - openjdk
+    - openjdk<=9
   run:
-    - openjdk
+    - openjdk<=9
 
 # tests to validate that the package works as expected
 tests:
