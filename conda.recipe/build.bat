@@ -6,6 +6,12 @@
 echo linux64 > exclude.txt
 echo macosx >> exclude.txt
 echo win32 >> exclude.txt
+echo jruby >> exclude.txt
+echo scala >> exclude.txt
+echo jython >> exclude.txt
+echo renjin >> exclude.txt
+echo grpc >> exclude.txt
+
 xcopy fiji\* %PREFIX% /s /exclude:exclude.txt
 @REM TODO: add more update sites by calling the updater
 @REM TODO: remove platform-specific files when building for each platform?

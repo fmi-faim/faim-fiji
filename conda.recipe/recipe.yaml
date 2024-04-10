@@ -1,8 +1,8 @@
 # this sets up "context variables" (in this case name and version) that
 # can later be used in Jinja expressions
 context:
-  version: 2.14.0
-  name: run-fiji
+  version: 0.1.0
+  name: faim-fiji
 
 # top level package information (name and version)
 package:
@@ -18,7 +18,7 @@ source:
 
 # build number (should be incremented if a new build is made, but version is not incrementing)
 build:
-  number: 0
+  number: 1
   script:
   - if: linux
     then: build.sh
